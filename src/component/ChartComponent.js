@@ -9,11 +9,9 @@ const ChartComponent = () => {
     const { lastJsonMessage } = useContext(WebSocketContext);
 
 
-    messageHistory.current = useMemo(() => 
-        messageHistory.current.concat(lastJsonMessage)
-    , [lastJsonMessage]);
-
-    console.dir(messageHistory.current);
+    messageHistory.current = useMemo(() =>
+        messageHistory.current = messageHistory.current.concat(lastJsonMessage)
+        , [lastJsonMessage]);
 
     return <>
         <h3>Chart</h3>
