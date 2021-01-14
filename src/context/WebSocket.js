@@ -8,24 +8,18 @@ const WebSocketContext = createContext(null)
 export { WebSocketContext }
 
 const WebSocketProvider = ({ children }) => {
-    let socket;
-    let ws;
+    const {
+        lastJsonMessage,
+        getWebSocket
+    } = useWebSocket(socketUrl, {
+        shouldReconnect: () => true,
+    });
 
-    if (!socket) {
-        const {
-            lastJsonMessage,
-            getWebSocket
-        } = useWebSocket(socketUrl, {
-            shouldReconnect: () => true,
-        });
-
-        socket = getWebSocket();
-
-        ws = {
-            socket: socket,
-            lastJsonMessage
-        }
-    }
+    const socket = getWebSocket();
+    const ws = {
+        socket: socket,
+        lastJsonMessage
+    };
 
     return (
         <WebSocketContext.Provider value={ws}>
