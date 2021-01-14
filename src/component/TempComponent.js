@@ -7,7 +7,7 @@ const TempComponent = ({ id }) => {
 
     return <>
         <h3>ID: {id}</h3>
-        <h4>Temp: {entry.temperature ? entry.temperature : 0} C</h4>
+        <h4>Temp: {entry ? entry.temperature : 0} C</h4>
     </>
 }
 
