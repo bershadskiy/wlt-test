@@ -11,4 +11,4 @@ const TempComponent = ({ id }) => {
     </>
 }
 
-export { TempComponent };
+export default TempComponent;

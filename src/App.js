@@ -1,6 +1,7 @@
 import './App.css';
 import WebSocketProvider from './context/WebSocket';
-import { TempComponent } from "./component/TempComponent";
+import TempComponent from "./component/TempComponent";
+import ChartComponent from "./component/ChartComponent";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <WebSocketProvider>
           <TempComponent id={1} />
           <TempComponent id={2} />
+          <ChartComponent />
         </WebSocketProvider>
       </header>
     </div>
