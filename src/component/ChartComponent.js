@@ -8,10 +8,14 @@ const ChartComponent = () => {
     const messageHistory = useRef([]);
     const { lastJsonMessage } = useContext(WebSocketContext);
 
+    messageHistory.current = useMemo(() => messageHistory.current = messageHistory.current.concat(lastJsonMessage), [lastJsonMessage]);
 
-    messageHistory.current = useMemo(() =>
-        messageHistory.current = messageHistory.current.concat(lastJsonMessage)
-        , [lastJsonMessage]);
+    useEffect(() => {
+        let svg = d3.select(d3Ref.current)
+            .append('svg')
+            .attr('width', 480)
+            .attr('height', 320);
+    }, [d3Ref])
 
     return <>
         <h3>Chart</h3>
