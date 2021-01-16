@@ -6,13 +6,13 @@ import ChartComponent from "./component/ChartComponent";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <WebSocketProvider>
+      <WebSocketProvider>
+        <header className="App-header">
           <TempComponent id={1} />
           <TempComponent id={2} />
-          <ChartComponent />
-        </WebSocketProvider>
-      </header>
+        </header>
+        <ChartComponent />
+      </WebSocketProvider>
     </div>
   );
 }
